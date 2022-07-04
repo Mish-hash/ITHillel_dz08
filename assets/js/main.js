@@ -58,3 +58,52 @@ triangle.setValues(3, 3, 2);
 
 console.log(triangle.getPerimeter());
 console.log(triangle.isEqualSides());
+
+
+/*
+2) Создайте объект calculator с методами:
+
+- read() запрашивает prompt() для двух значений и сохраняет их как свойства объекта x, y
+- sum() возвращает сумму этих двух значений
+- multi() возвращает произведение этих двух значений
+- diff() возвращает разницу
+- div() возвращает частное
+В консоли ожидаю увидеть:
+
+calculator.read(); // for example 5 2
+console.log(calculator.sum()); // 7
+console.log(calculator.diff()); // 3
+*/
+
+const calculator = {
+    x: 0,
+    y: 0,
+
+    read: function () {
+        this.x = parseFloat(prompt('Please enter first number'));
+        this.y = parseFloat(prompt('Please enter second number'));
+    },
+
+    sum: function () {
+        return this.x + this.y;
+    },
+
+    multi: function() {
+        return this.x * this.y;
+    },
+
+    diff: function() {
+        return this.x - this.y;
+    },
+
+    div: function() {
+        return this.x / this.y;
+    }
+};
+
+calculator.read();
+console.log('Calculator sum() => ' + calculator.sum());
+console.log('Calculator multi() => ' + calculator.multi());
+console.log('Calculator diff() => ' + calculator.diff());
+console.log('Calculator div() => ' + calculator.div());
+
