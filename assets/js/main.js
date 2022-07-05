@@ -152,3 +152,30 @@ format.apply(country, ['[', ']']); // [Ukraine]
 format.call(country.capital, '', ''); // Kyiv
 format.apply(country.capital, ['', '']); // Kyiv
 format.apply(country.language, ['', '']); // undefined
+
+
+/*
+4) Что выведет данный код на экран и почему?
+
+var text = 'outside';
+
+function logIt(){
+    console.log(text);
+    var text = 'inside';
+};
+
+logIt();
+
+*/
+
+var text = 'outside';
+
+function logIt(){
+    console.log(text);
+    var text = 'inside';
+};
+
+logIt();
+
+// Выполнение функции выполнит underfined потому как в фукции logIt() к переменной обращаются до того как её определили,
+// а глобально эта переменная не видна, по-скольку она далее обьявляется в функцции.
