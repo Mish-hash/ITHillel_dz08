@@ -107,3 +107,48 @@ console.log('Calculator multi() => ' + calculator.multi());
 console.log('Calculator diff() => ' + calculator.diff());
 console.log('Calculator div() => ' + calculator.div());
 
+
+/*
+3)* Дан объект country и функция format():
+
+var country = {
+    name: 'Ukraine',
+    language: 'ukrainian',
+    capital: {
+        name: 'Kyiv',
+        population: 2907817,
+        area: 847.66
+    }
+};
+
+function format(start, end) {
+    console.log(start + this.name + end);
+}
+Допишите код так, чтобы в консоли появились строки указанные в комментариях.
+
+format.call( Ваш код ); // Ukraine
+format.apply( Ваш код ); // [Ukraine]
+format.call( Ваш код ); // Kyiv
+format.apply( Ваш код ); // Kyiv
+format.apply( Ваш код ); // undefined
+*/
+
+const country = {
+    name: 'Ukraine',
+    language: 'ukrainian',
+    capital: {
+        name: 'Kyiv',
+        population: 2907817,
+        area: 847.66
+    },
+};
+
+function format(start, end) {
+    console.log(start + this.name + end);
+}
+
+format.call(country, '', ''); // Ukraine
+format.apply(country, ['[', ']']); // [Ukraine]
+format.call(country.capital, '', ''); // Kyiv
+format.apply(country.capital, ['', '']); // Kyiv
+format.apply(country.language, ['', '']); // undefined
